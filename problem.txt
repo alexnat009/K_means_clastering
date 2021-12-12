@@ -1,0 +1,6 @@
+Assume we have city A. There have been a crime outbreak 
+and for the past 5 years police have been trying
+to locate the optimal location for the night crews.
+Let points on X-Y plane be crime locations, then 
+using K-means clustering we need to find optimal
+centers for locating police.
