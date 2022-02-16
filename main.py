@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
+import numpy as np
 import random
 
 random.seed(20)
@@ -21,9 +22,7 @@ for i in range(number_of_clusters):
     tmp = df[df.cluster == i]
     dfs.append(tmp)
 
-random_color = [[round(random.uniform(0.1, 0.9), 2), round(random.uniform(0.1, 0.9), 2),
-                 round(random.uniform(0.1, 0.9), 2)] for i in
-                range(number_of_clusters)]
+random_color = np.random.uniform(0.1, 0.9, (number_of_clusters, 3))
 
 for k in range(number_of_clusters):
     plt.scatter(dfs[k]['longitude'], dfs[k]['latitude'],
