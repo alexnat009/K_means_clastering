@@ -2,9 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import numpy as np
-import random
 
-random.seed(20)
+np.random.seed(20)
 
 # number of cluster was found by elbow method, with finding the
 # optimal point where graph decrease drastically slows down
@@ -12,7 +11,7 @@ number_of_clusters = 9
 
 df = pd.read_excel('Book1.xlsx', sheet_name='data')
 
-km = KMeans(n_clusters=number_of_clusters)
+km = KMeans(n_clusters=number_of_clusters, random_state=1)
 
 y_predicted = km.fit_predict(df[['longitude', 'latitude']])
 df['cluster'] = y_predicted
